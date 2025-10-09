@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <title>Temple Album</title>
+  <meta name="description" content="Temple Album | collection of temple photos - WDD131 Responsive Album" />
+  <meta name="author" content="VINCENT TAIYE BALOGUN" >
+    <link rel="icon" type="image/png" href="images/download.png">
+
+  <!-- Google Fonts (lightweight choices) -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Mobile-first CSS -->
+  <link rel="stylesheet" href="styles/temples.css">
+
+  <!-- Larger-screen overrides -->
+  <link rel="stylesheet" href="styles/temples-large.css">
+
+  <!-- JS (deferred so it doesn't block render) -->
+  <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">Temple Album</h1>
+
+      <button id="hamburger" class="hamburger" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation">
+        ☰
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#old">Old</a></li>
+          <li><a href="#new">New</a></li>
+          <li><a href="#large">Large</a></li>
+          <li><a href="#small">Small</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="main">
+    <h2 class="page-heading">A Photo Album of Temples</h2>
+
+    <!-- Gallery: 9 figures as required. Replace src with your local optimized images. -->
+    <section class="gallery" aria-label="Temple gallery">
+      <figure>
+        <img src="images/idahotemple.jpeg" alt="Temple One, City" loading="lazy">
+        <figcaption>___Idaho Temple — City</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/idahotemple.jpeg" alt="Temple Two, City" loading="lazy">
+        <figcaption>___Idaho Temple — City</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/idahotemple.jpeg" alt="Temple Three, City" loading="lazy">
+         <figcaption>___Idaho Temple — City</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/idahotemple.jpeg" alt="Temple Four, City" loading="lazy">
+         <figcaption>___Idaho Temple — City</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/idahotemple.jpeg" alt="Temple Five, City" loading="lazy">
+         <figcaption>___Idaho Temple — City</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/idahotemple.jpeg" alt="Temple Six, City" loading="lazy">
+        <figcaption>___Idaho Temple — City</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/idahotemple.jpeg" alt="Temple Seven, City" loading="lazy">
+         <figcaption>___Idaho Temple — City</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/idahotemple.jpeg"  alt="Temple Eight, City" loading="lazy">
+         <figcaption>___Idaho Temple — City</figcaption>
+      </figure>
+
+      <figure>
+        <img src= "images/idahotemple.jpeg"  alt="Temple Nine, City" loading="lazy">
+        <figcaption>___Idaho Temple — City</figcaption>
+      </figure>
+      		
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy;<span id="currentyear"></span> 🌸 VINCENT TAIYE BALOGUN 🌸Lagos, Nigeria</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>

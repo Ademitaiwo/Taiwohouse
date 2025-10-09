@@ -1,0 +1,78 @@
+/* Mobile-first base styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --bg: #ffffff;
+  --primary: #0f4c75;
+  --accent: #3282b8;
+  --muted: #f6f8fa;
+  --text: #222;
+  --card-radius: 15px 100px;
+  --max-width: 1100px;
+  --gap: 12px;
+  --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+/* base */
+html,body{
+    height:100%;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-sans);
+    -webkit-font-smoothing:antialiased;
+    font-weight: 400;
+     font-style: normal;
+}
+
+a{color:var(--accent);
+    text-decoration:none;
+}
+a:focus, button:focus{outline:3px solid rgba(50,130,184,0.25);outline-offset:2px}
+
+/* header */
+.site-header{background:var(--primary);color:#fff;padding:.6rem 1rem;position:sticky;top:0;z-index:40}
+.header-inner{display:flex;align-items:center;gap:1rem;max-width:var(--max-width);margin:0 auto;width:100%}
+.site-title{flex:1;font-weight:600;font-size:1.1rem;color:#fff}
+
+/* hamburger (mobile) */
+.hamburger{background:transparent;border:0;color:#fff;font-size:1.4rem;cursor:pointer;padding:.25rem .5rem}
+.hamburger[aria-expanded="true"]{transform:rotate(90deg)}
+
+/* nav: hidden by default on mobile */
+.site-nav{width:100%;display:none}
+.site-nav.show{display:block}
+.nav-list{list-style:none;display:flex;flex-direction:column;gap:.35rem;padding:.6rem 0}
+.nav-list a{display:block;padding:.55rem .6rem;color:#fff;border-radius:6px;font-weight:600}
+.nav-list a:hover,.nav-list a:focus{background:rgba(255,255,255,0.08)}
+
+/* container */
+.container{max-width:var(--max-width);margin:1rem auto;padding:0 1rem}
+.page-heading{text-align:center;margin-bottom:.75rem;color:var(--primary);font-weight:600}
+
+/* gallery: mobile 1 column */
+.gallery{display:grid;grid-template-columns:1fr;gap:var(--gap)}
+
+figure{
+    background:var(--muted);border-radius:var(--card-radius);overflow:hidden;border:1px solid #e5ebf0;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,0.03)
+}
+figure img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:cover
+}
+figcaption{
+    padding:.75rem;
+    font-size:.95rem;
+    color:var(--text)
+    
+}
+
+/* footer */
+.site-footer{margin-top:1rem;background:var(--primary);color:#fff;padding:.9rem 1rem;text-align:center;font-weight:600}
+
+#lastModified {
+    color: yellow;
+    font-size: 0.9rem;}
+/* accessibility reduce motion */
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
