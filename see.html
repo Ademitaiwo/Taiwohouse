@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Through Self-Study Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #4f46e5;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-lg">💻</span>
+                        </div>
+                        <span class="font-bold text-xl text-gray-800">ICT Self-Study</span>
+                    </div>
+                </div>
+
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home"
+                            class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#about"
+                            class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="#resources"
+                            class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Resources</a>
+                        <a href="#community"
+                            class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Community</a>
+                        <a href="#contact"
+                            class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-indigo-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">About</a>
+                <a href="#resources" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Resources</a>
+                <a href="#community" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Community</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg pt-20 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+            <div class="text-center fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    ICT Through Self-Study Community
+                </h1>
+                <p class="text-xl md:text-2xl text-indigo-100 mb-8 max-w-3xl mx-auto">
+                    Empowering learners to master Information and Communication Technology through collaborative
+                    self-study and peer support
+                </p>
+                <div class="space-x-4">
+                    <button onclick="scrollToSection('about')"
+                        class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                        Learn More
+                    </button>
+                    <button onclick="scrollToSection('community')"
+                        class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition duration-300">
+                        Join Community
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Our Community</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    We believe that the best way to learn ICT is through hands-on practice, peer collaboration, and
+                    continuous self-improvement.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center card-hover bg-gray-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📚</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Self-Paced Learning</h3>
+                    <p class="text-gray-600">Learn at your own pace with curated resources and structured pathways
+                        designed for independent study.</p>
+                </div>
+
+                <div class="text-center card-hover bg-gray-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🤝</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Peer Support</h3>
+                    <p class="text-gray-600">Connect with fellow learners, share knowledge, and get help when you need
+                        it most.</p>
+                </div>
+
+                <div class="text-center card-hover bg-gray-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🚀</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Practical Skills</h3>
+                    <p class="text-gray-600">Focus on real-world applications and hands-on projects that build
+                        marketable ICT skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Learning Resources</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Comprehensive resources to support your ICT learning journey
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-xl">💻</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Programming</h3>
+                    <p class="text-gray-600 text-sm mb-4">Learn popular programming languages and frameworks</p>
+                    <button class="text-indigo-600 hover:text-indigo-800 font-medium text-sm">Explore →</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-xl">🌐</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Web Development</h3>
+                    <p class="text-gray-600 text-sm mb-4">Build modern websites and web applications</p>
+                    <button class="text-indigo-600 hover:text-indigo-800 font-medium text-sm">Explore →</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-xl">📊</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Data Science</h3>
+                    <p class="text-gray-600 text-sm mb-4">Analyze data and build predictive models</p>
+                    <button class="text-indigo-600 hover:text-indigo-800 font-medium text-sm">Explore →</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-xl">🔒</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Cybersecurity</h3>
+                    <p class="text-gray-600 text-sm mb-4">Protect systems and secure digital assets</p>
+                    <button class="text-indigo-600 hover:text-indigo-800 font-medium text-sm">Explore →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Join Our Community</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Connect with like-minded learners and accelerate your ICT journey together
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-indigo-600 font-bold">✓</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-1">Study Groups</h3>
+                                <p class="text-gray-600">Join focused study groups for specific ICT topics and
+                                    technologies</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-indigo-600 font-bold">✓</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-1">Mentorship Program</h3>
+                                <p class="text-gray-600">Get guidance from experienced community members and industry
+                                    professionals</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-indigo-600 font-bold">✓</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-1">Project Collaboration</h3>
+                                <p class="text-gray-600">Work on real projects with other learners to build your
+                                    portfolio</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-indigo-600 font-bold">✓</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-1">Weekly Workshops</h3>
+                                <p class="text-gray-600">Attend virtual workshops on trending ICT topics and emerging
+                                    technologies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Ready to Start Learning?</h3>
+                    <form id="join-form" class="space-y-4">
+                        <div>
+                            <input type="text" id="name" placeholder="Your Name"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <input type="email" id="email" placeholder="Your Email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <select id="interest"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                                <option value="">Select Your Interest</option>
+                                <option value="programming">Programming</option>
+                                <option value="web-dev">Web Development</option>
+                                <option value="data-science">Data Science</option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="networking">Networking</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300">
+                            Join Community
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Have questions or suggestions? We'd love to hear from you!
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <div class="space-y-8">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-indigo-600 text-xl">📧</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Email Us</h3>
+                                <p class="text-gray-600">community@ictselfstudycom</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-indigo-600 text-xl">💬</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Discord Server</h3>
+                                <p class="text-gray-600">Join our active Discord community</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-indigo-600 text-xl">📱</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Social Media</h3>
+                                <p class="text-gray-600">Follow us for updates and tips</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                            <input type="text" id="contact-name"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="contact-email"
+                                class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" id="contact-email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="message" rows="4"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center mr-2">
+                            <span class="text-white font-bold">💻</span>
+                        </div>
+                        <span class="font-bold text-lg">ICT Self-Study</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Empowering learners to master ICT through collaborative self-study
+                        and peer support.</p>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#resources" class="hover:text-white transition duration-300">Resources</a></li>
+                        <li><a href="#community" class="hover:text-white transition duration-300">Community</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Learning Paths</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition duration-300">Programming</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Web Development</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Data Science</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Cybersecurity</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Connect</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition duration-300">Discord</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">GitHub</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Twitter</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2024 ICT Through Self-Study Community. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            const navHeight = 64; // Height of fixed navigation
+            const elementPosition = element.offsetTop - navHeight;
+
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        // Navigation link smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Join community form
+        document.getElementById('join-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const interest = document.getElementById('interest').value;
+
+            if (name && email && interest) {
+                // Simulate form submission
+                alert(`Welcome to the community, ${name}! We'll send you information about ${interest} resources to ${email}.`);
+
+                // Reset form
+                this.reset();
+            } else {
+                alert('Please fill in all fields to join the community.');
+            }
+        });
+
+        // Contact form
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                // Simulate form submission
+                alert(`Thank you for your message, ${name}! We'll get back to you at ${email} soon.`);
+
+                // Reset form
+                this.reset();
+            } else {
+                alert('Please fill in all fields to send your message.');
+            }
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'98c6aa8ff71b657c',t:'MTc2MDEwNTA2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
