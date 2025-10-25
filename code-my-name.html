@@ -1,183 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code my name</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Code my name</title>
 </head>
+
 <body>
-    <style>
-        body {
-            display: flex;
-            align-items: center;       /* vertical center */
-            justify-content: center;   /* horizontal center */
-            text-align: center;        /* center text inside the box */
-            min-height: 100vh;         /* full viewport height */
-            font-family: Arial, sans-serif;
-            background-color: #f9f8ea;
-            color: #333;
-            padding: 20px;
-            margin: 0; 
-        }
+	<style>
+		body {
+			display: flex;
+			align-items: center;
+			/* vertical center */
+			justify-content: center;
+			/* horizontal center */
+			text-align: center;
+			/* center text inside the box */
+			min-height: 100vh;
+			/* full viewport height */
+			font-family: Arial, sans-serif;
+			background-color: #f9f8ea;
+			color: #333;
+			padding: 20px;
+			margin: 0;
+		}
 
-        #myName {
-            background-color: #e0f7fa;
-            border: 2px solid #00796b;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-        }
+		#myName {
+			background-color: #e0f7fa;
+			border: 2px solid #00796b;
+			border-radius: 10px;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			max-width: 400px;
+			width: 100%;
+		}
 
-        * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
-h1 {
-	text-align: left;
-	font-family: times, serif;
-	font-size: 1.5rem;
-	margin-left: 1rem;
-}
+		h1 {
+			text-align: left;
+			font-family: times, serif;
+			font-size: 1.5rem;
+			margin-left: 1rem;
+		}
 
-h2 {
-	font-size: 1.2rem;
-	color: navy;
-	text-align: left;
-	margin: 1rem;
-}
+		h2 {
+			font-size: 1.2rem;
+			color: navy;
+			text-align: left;
+			margin: 1rem;
+		}
 
-nav {
-	max-width: 700px;
-	margin: 1rem auto;
-}
+		nav {
+			max-width: 700px;
+			margin: 1rem auto;
+		}
 
-/* small view navigation */
-#menu {
-	font-size: 1.5rem;
-	border: 0;
-	background: none;
-	color: #000;
-	position: absolute;
-	top: 1rem;
-	right: 1rem;
-}
+		/* small view navigation */
+		#menu {
+			font-size: 1.5rem;
+			border: 0;
+			background: none;
+			color: #000;
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+		}
 
-#menu::before {
-	content: "☰";
-}
+		#menu::before {
+			content: "☰";
+		}
 
-#menu.open::before {
-	content: "❌";
-}
+		#menu.open::before {
+			content: "---";
+		}
 
-.navigation {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	list-style: none;
-	background-color: #333;
-	color: #fff;
-}
+		.navigation {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			list-style: none;
+			background-color: #333;
+			color: #fff;
+			justify-content: space-around;
+		}
 
-.navigation a {
-	display: none;
-	padding: 1rem;
-	text-align: center;
-	text-decoration: none;
-	color: #fff;
-}
-.navigation a:hover {
-	background-color: #bbb;
-	color: #333;
-	font-weight: 700;
-}
+		.navigation a {
+			display: none;
+			padding: 1rem;
+			text-align: center;
+			text-decoration: none;
+			color: #fff;
+		}
 
-/* when the button is clicked - the open class is toggled (added/removed) */
-.open a {
-	display: block;
-}
+		.navigation a:hover {
+			background-color: #bbb;
+			color: #333;
+			font-weight: 700;
+		}
 
-.active::before { 
-	content: "📍";  /* just a wayfinding symbol for the user */
-}
+		/* when the button is clicked - the open class is toggled (added/removed) */
+		.open a {
+			display: block;
+		}
 
-.stuff {
-	margin: 0.5rem;
-	border: 1px solid rgb(0  0  0 / 0.1);
-	background-color: #bed;
-	max-width: 580px;
-	height: 100vh;
-}
+		.active::before {
+			content: "📍";
+			/* just a wayfinding symbol for the user */
+		}
 
-/* large view navigation ************************************/
-@media (min-width: 37.5em) {
-	h1 {
-		font-size: 2.5rem;
-		margin-left: 0;
-		text-align: center;
-	}
+		.stuff {
+			margin: 0.5rem;
+			border: 1px solid rgb(0 0 0 / 0.1);
+			background-color: #bed;
+			max-width: 580px;
+			height: 100vh;
+		}
 
-	h2 {
-		font-size: 2rem;
-		text-align: center;
-	}
+		/* large view navigation ************************************/
+		@media (min-width: 37.5em) {
+			h1 {
+				font-size: 2.5rem;
+				margin-left: 0;
+				text-align: center;
+			}
 
-	#menu {
-		display: none; /* hide hamburger button */
-	}
+			h2 {
+				font-size: 2rem;
+				text-align: center;
+			}
 
-	.navigation {
-		flex-direction: row;
-	}
+			#menu {
+				display: none;
+				/* hide hamburger button */
+			}
 
-	.navigation a {
-		display: block;
-		flex: 1 1 100%;
-	}
+			.navigation {
+				flex-direction: row;
+			}
 
-	.stuff {
-		margin: 1rem auto;
-	}
-}
+			.navigation a {
+				display: block;
+				flex: 1 1 100%;
+			}
 
+			.stuff {
+				margin: 1rem auto;
+			}
+		}
+	</style>
 
-    </style>
+	<header>
+		<h2>Learm Responsive Navigation</h2>
+		<button type="button" id="menu"></button>
+		<nav>
+			<ul class="navigation">
+				<li><a href="about.html">About Us</a></li>
+				<li><a href="services.html">Services</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="code-my-name.html">Code My Name</a></li>
+			</ul>
+		</nav>
+	</header>
+	<script>
+		const humButton = document.querySelector('#menu');
+		const navigation = document.querySelector('.navigation');
 
-    <header>
-        <h2>Learm Responsive Navigation</h2>
-        <button type="button" id="menu"></button>
-        <nav>
-            <ul class="navigation">
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="code-my-name.html">Code My Name</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- <div id="myName"></div> -->
-
-    <!-- <script>
-        const humButton = document.querySelector('#menu'); 
-        const Navigation = document.querySelector('Navigation');
-
-        humButton.addEventListener('click',()=> {
-            Navigation.classList.toggle('active');
-            humButton.classList.toggle('active');
-        });
-
-        function hisName(T_developer, Mr_Dev) {
-            const nameDiv = document.querySelector('#myName');
-            nameDiv.innerHTML += `<h4>${T_developer} ${Mr_Dev}</h4>`;
-        }
-
-        hisName("My name is Mr_Dev,", "still you can call me T_developer");
-        hisName("But if you want to try my hands", "bring job.");
-    </script> -->
+		humButton.addEventListener('click', () => {
+			navigation.classList.toggle('open');
+			humButton.classList.toggle('open');
+		});
+	</script>
 </body>
+
 </html>
